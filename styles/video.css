@@ -1,0 +1,101 @@
+/* video.css */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+  row-gap: 40px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1000px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+  body {
+    padding-left: 96px; /* Keep sidebar padding consistent */
+  }
+}
+
+.video-preview {
+  cursor: pointer;
+}
+
+.thumbnail-row {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.video-time {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  position: absolute;
+  bottom: 8px;
+  right: 5px;
+  font-family: Roboto, Arial;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.video-info-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+
+.channel-picture {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-picture {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.video-info {
+  margin-left: 2px;
+}
+
+.video-title {
+  /* ... other styles like font-size, margin, etc. ... */
+
+  /* --- Text Truncation --- */
+
+  /* 1. Hide the overflowing text */
+  overflow: hidden;
+
+  /* 2. Standard properties for modern browsers */
+  /* This will be used by default if the browser supports it */
+  display: block; 
+  line-clamp: 2;
+
+  /* 3. Fallback properties for older WebKit browsers (like Safari) */
+  /* These are necessary for compatibility */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* The number of lines MUST match */
+  -webkit-box-orient: vertical;  
+}
+.video-author,
+.video-stats {
+  font-size: 14px;
+  color: rgb(96, 96, 96);
+}
+
+.video-author {
+  margin-bottom: 4px;
+}
